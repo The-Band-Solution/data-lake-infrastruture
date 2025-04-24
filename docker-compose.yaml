@@ -1,0 +1,32 @@
+version: '3'
+services:
+  dremio:
+    image: dremio/dremio-oss:${DREMIO_IMAGE_VERSION}
+    container_name: dremio
+    ports:  
+      - 9047:9047 
+      - 31010:31010 
+      - 45678:45678
+    environment:
+      - DREMIO_ENABLE_AUTHENTICATION=true
+      - DREMIO_PERSONAL_ACCESS_TOKENS_ENABLED=true
+      - DREMIO_SECURITY_AUTH_PERSONAL_ACCESS_TOKENS_ENABLED=true
+      - DREMIO_SECURITY_AUTHENTICATION_ENABLED=true
+      - DREMIO_SECURITY_AUTHORIZER_DREMIO_ALLOW_UNENCRYPTED_ACCESS=true
+      - DREMIO_SECURITY_AUTHORIZER_DREMIO_ALLOW_LOCAL_AUTH=true
+    volumes:
+      - dremio:/opt/dremio/data
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+
+networks: 
+  default: 
+    name: base-infrastrutrure
+    external: true
+
+volumes: 
+  dremio:
