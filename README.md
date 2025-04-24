@@ -1,5 +1,5 @@
-# Dremio - Provides a Datalake infrastruture to The Band
-
+# Datalake infrastruture to The Band
+Dremio - Provides a datalake infrastruture to The Band.
 ## Build
 
 First, create a .env file with the contain: 
@@ -28,5 +28,4 @@ We develop a set of queries that uses *The Band*`s Ontology Data Repositories (O
 
 * [Zeppelin Queries](./zeppelin_queries.md): provide integrated data to answser some Zeppelìn`s assessment;
 
-* [Extract Queries](): provides data extraction;
 
