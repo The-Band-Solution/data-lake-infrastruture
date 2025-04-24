@@ -1,31 +1,53 @@
-# Datalake infrastruture to The Band
-Dremio - Provides a datalake infrastruture to The Band.
-## Build
+# 🧠 Datalake Infrastructure for **The Band**
 
-First, create a .env file with the contain: 
+This repository sets up a **Dremio-based Datalake infrastructure** to support data integration and exploration for *The Band* project. It leverages **Ontology Data Repositories (ODRs)** to unify and expose data for stakeholders through semantic-aware queries.
 
-```
+## 🏗️ Build Setup
+
+First, create a `.env` file at the root of the project with the following content:
+
+```env
 DREMIO_IMAGE_VERSION=latest
 ```
 
-Then, execute the following command in a terminal:
+Then, build the Docker containers with:
 
 ```bash
 docker compose build
 ```
 
-## Usage
+## 🚀 Running the Environment
 
-Execute the following command in a terminal:
+Start the infrastructure using Docker Compose:
 
 ```bash
-docker compose up -d 
+docker compose up -d
 ```
 
-## Query
+This command will launch Dremio and any supporting services defined in the `docker-compose.yml`.
 
-We develop a set of queries that uses *The Band*`s Ontology Data Repositories (ODR) to provides integrated data to a stakeholder.
+## 📊 Semantic Queries
 
-* [Zeppelin Queries](./zeppelin_queries.md): provide integrated data to answser some Zeppelìn`s assessment;
+We’ve developed a set of semantic queries using *The Band*’s Ontology Data Repositories (ODRs). These queries provide integrated, meaningful insights to stakeholders and support analytical tools like **Zeppelin**.
 
+- 📘 [Zeppelin Queries](./zeppelin_queries.md) — A collection of prepared queries aligned with specific assessment scenarios.
 
+These queries are designed to:
+- Integrate diverse datasets through ontology alignment
+- Deliver domain-specific insights
+- Support decision-making based on unified data views
+
+---
+
+## 🧩 Components
+
+| Component | Description |
+|----------|-------------|
+| **Dremio** | Acts as the semantic data lake engine, connecting multiple sources and exposing integrated datasets |
+| **ODR** | Ontology-driven data repositories that semantically organize domain data |
+
+---
+
+## 📚 Resources
+
+- [Dremio Documentation](https://docs.dremio.com/)
